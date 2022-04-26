@@ -145,5 +145,8 @@ errorDF['batch_id'] = batch_id
 errorDF['Time_stamp'] = batch_timestamp
 '''
 
+# Modify the labels
 
 # Show the prediction results on screen
+
+# allow user to change label
