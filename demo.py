@@ -14,7 +14,6 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import joblib
 
-cuda = torch.cuda.is_available()
 torch.manual_seed(87)
 np.random.seed(87)
 
@@ -41,7 +40,7 @@ class AE(nn.Module):
         x = self.decoder(x)
         return(x)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 scaler = joblib.load('scaler.gz')
 PATH = "current_model.pt"
 model = torch.load(PATH)
