@@ -81,13 +81,42 @@ st.write("The current threshold is",  threshold)
 st.write("The current expected precision is",  precision)
 st.write("The current expected recall is",  recall)
 
+agree = st.checkbox('I agree to proceed with the above metrics.')
 
 ## Load the prediction results
+demo_results = pd.read_csv("demo_results.csv")
+
+def predict_label(x):
+    if x >= threshold:
+        return 1
+    if x < threshold:
+        return 0
+
+
+
+'''
+## Any alerts will show here
+'''
+if agree:
+    demo_results["pred_label"] = demo_results["pred_loss"].apply(predict_label, axis=1)
 
 
 
 
+'''
+## Display results with labels
+#### (Labels shouldn't really be here but it will allow us to get some idea of performance on this small demo set.)
+'''
+## Display results
+hide_dataframe_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
 
+# Inject CSS with Markdown
+st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 
-
-# Show the prediction results on screen
+# Display an interactive table
+st.dataframe(demo_results)
