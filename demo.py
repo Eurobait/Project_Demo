@@ -27,11 +27,10 @@ test_summary = pd.read_csv("test_results.csv")
 ## Display precision recall curve
 '''
 ## Display precision recall curve
-'''
+
 PrecisionRecallDisplay.from_predictions(test_summary.Class, test_summary.pred_loss)
-plt.ylim((0,1))
-plt.show()
-'''
+st.pyplot()
+
 
 '''
 ## Enter your performance preference
@@ -84,9 +83,12 @@ st.write("The current expected precision is",  precision)
 st.write("The current expected recall is",  recall)
 
 
+## Load the prediction results
 
-# Modify the labels
+
+
+
+
+
 
 # Show the prediction results on screen
-
-# allow user to change label
