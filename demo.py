@@ -89,9 +89,9 @@ def threshold_by_recall(p):
     return threshold, precision, recall
 
 
-if u_precision == 0.00 & u_recall != 0.00:
+if u_precision == 0.00 and u_recall != 0.00:
     threshold, precision, recall = threshold_by_recall(u_recall)
-elif u_precision != 0.00 & u_recall == 0.00:
+elif u_precision != 0.00 and u_recall == 0.00:
     threshold, precision, recall = threshold_by_precision(u_precision)
 else: st.write("Input is not valid. Only one metric can be non-zero to initiate a search" )
 
