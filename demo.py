@@ -19,10 +19,6 @@ torch.manual_seed(87)
 np.random.seed(87)
 
 
-'''
-## Load Threshold
-'''
-
 ## Load Threshold
 test_summary = pd.read_csv("test_results.csv")
 
