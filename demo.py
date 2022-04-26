@@ -102,6 +102,45 @@ else:
 
 
 
+# output the expected values
 st.write("The current threshold is",  threshold)
 st.write("The current expected precision is",  precision)
 st.write("The current expected recall is",  recall)
+
+
+
+'''
+# Prediction
+# read a small dataset for demo, there should not be any label
+# Label is included here for revision reference only
+batch_test = pd.read_csv("demo_test.csv") 
+batch_id = batch_test["Flow_ID"]
+batch_timestamp = batch_test["Time_stamp"]
+
+batch_X = batch_test.iloc[:,2:86]
+
+batch_loader = DataLoader(batch_X, batch_size = 2048, shuffle=False)
+
+
+criterion = nn.MSELoss(reduction='none')
+
+with torch.no_grad():
+        model.eval() 
+        anomaly_scores = []
+
+        for X in batch_loader:
+            X = X.to(device)
+            outputs = model(X)
+            loss = criterion(outputs, X).detach().cpu().numpy()
+            anomaly_scores.append(loss)
+
+            del X
+            del outputs
+            del loss
+
+anomaly_scores = np.sum(np.concatenate(anomaly_scores, axis=0), axis=1)
+
+errorDF = pd.DataFrame(anomaly_scores, columns=["pred_loss"])
+errorDF['batch_id'] = batch_id
+errorDF['Time_stamp'] = batch_timestamp
+'''
