@@ -73,7 +73,8 @@ u_recall = st.number_input("Expected Recall", 0.00)
 # Search for threshold based on precision
 def threshold_by_precision(p):
     # we need to exclude first 1000 rows in the search process
-    df = test_summary.iloc[1000:,:]
+    df = test_summary.copy()
+    df = df.iloc[1000:,:]
     df["Precision"] = abs(df["Precision"] - u_precision)
     df = df.sort_values(by=['Precision'], ascending=True)
     threshold, type, precision, recall = test_summary.iloc[df.index[0], :]
@@ -83,7 +84,8 @@ def threshold_by_precision(p):
 # Search for threshold based on precision
 def threshold_by_recall(p):
     # we need to exclude first 1000 rows in the search process
-    df = test_summary.iloc[1000:,:]
+    df = test_summary.copy()
+    df = df.iloc[1000:,:]
     df["Recall"] = abs(df["Recall"] - u_recall)
     df = df.sort_values(by=['Recall'], ascending=True)
     threshold, type, precision, recall = test_summary.iloc[df.index[0], :]
