@@ -52,8 +52,7 @@ model.eval()
 test_summary = pd.read_csv("test_results.csv")
 
 ## Display precision recall curve
-PrecisionRecallDisplay.from_predictions(test_summary.Class, test_summary.pred_loss)
-fig = plt.ylim((0,1))
+fig = PrecisionRecallDisplay.from_predictions(test_summary.Class, test_summary.pred_loss)
 st.pyplot(fig)
 
 
