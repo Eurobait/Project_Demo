@@ -96,7 +96,7 @@ elif u_precision != 0.00 and u_recall == 0.00:
     threshold, precision, recall = threshold_by_precision(u_precision)
 else: 
     st.write("Input is not valid. Only one metric can be non-zero to initiate a search" )
-    threshold, precision, recall = nan
+    threshold, precision, recall = 0
 
 
 
