@@ -3,3 +3,7 @@ matplotlib
 joblib
 torch
 sklearn
+sklearn.preprocessing 
+sklearn.metrics
+sklearn.model_selection
+matplotlib.pyplot
