@@ -1,3 +1,4 @@
+from cmath import nan
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -93,7 +94,9 @@ if u_precision == 0.00 and u_recall != 0.00:
     threshold, precision, recall = threshold_by_recall(u_recall)
 elif u_precision != 0.00 and u_recall == 0.00:
     threshold, precision, recall = threshold_by_precision(u_precision)
-else: st.write("Input is not valid. Only one metric can be non-zero to initiate a search" )
+else: 
+    st.write("Input is not valid. Only one metric can be non-zero to initiate a search" )
+    threshold, precision, recall = nan
 
 
 
