@@ -18,7 +18,7 @@ torch.manual_seed(87)
 np.random.seed(87)
 
 
-
+'''
 # Load Model
 class AE(nn.Module):
     def __init__(self):
@@ -45,6 +45,7 @@ scaler = joblib.load('scaler.gz')
 PATH = "current_model.pt"
 model = torch.load(PATH)
 model.eval()
+'''
 
 
 # Load Threshold
