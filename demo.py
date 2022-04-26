@@ -27,10 +27,9 @@ test_summary = pd.read_csv("test_results.csv")
 ## Display precision recall curve
 '''
 ## Display precision recall curve
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 PrecisionRecallDisplay.from_predictions(test_summary.Class, test_summary.pred_loss)
 st.pyplot()
-
 
 '''
 ## Enter your performance preference
