@@ -144,3 +144,6 @@ errorDF = pd.DataFrame(anomaly_scores, columns=["pred_loss"])
 errorDF['batch_id'] = batch_id
 errorDF['Time_stamp'] = batch_timestamp
 '''
+
+
+# Show the prediction results on screen
