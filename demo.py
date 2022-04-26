@@ -98,7 +98,7 @@ def predict_label(x):
 ## Any alerts will show here
 '''
 if agree:
-    demo_results["pred_label"] = demo_results["pred_loss"].apply(predict_label, axis=1)
+    demo_results["pred_label"] = demo_results["pred_loss"].apply(predict_label)
 
 
 
