@@ -100,11 +100,13 @@ def predict_label(x):
 if agree:
     demo_results["pred_label"] = demo_results["pred_loss"].apply(predict_label)
     attacks = demo_results[demo_results["pred_label"]==1]
-    st.write("There are ", attacks.shape[0], "found in the set.")
+    st.write("There are ", attacks.shape[0], "attacks found in the set.")
 
     if attacks.shape[0] >0:
         for i in range(0, attacks.shape[0]):
-            st.write("Flow Information", attacks.iloc[i,0])
+            src_ip, des_ip, src_port, des_port, cntype = attacks.iloc[i,0].split('-')
+            st.write("Source IP: ", src_ip, " Source Port: ", src_port)
+            st.write("Destination IP: ", des_ip, " Destination Port: ", des_port)
             st.write("Time Stamp", attacks.iloc[i,1])
 
 
