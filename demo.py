@@ -99,7 +99,13 @@ def predict_label(x):
 '''
 if agree:
     demo_results["pred_label"] = demo_results["pred_loss"].apply(predict_label)
+    attacks = demo_results[demo_results["pred_label"]==1]
+    st.write("There are ", attacks.shape[0], "found in the set.")
 
+    if attacks.shape[0] >0:
+        for i in range(1, attacks.shape[0]+1):
+            st.write("Flow Information", attacks[i,0])
+            st.write("Time Stamp", attacks[i,1])
 
 
 
