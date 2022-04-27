@@ -103,7 +103,7 @@ if agree:
     st.write("There are ", attacks.shape[0], "found in the set.")
 
     if attacks.shape[0] >0:
-        for i in range(1, attacks.shape[0]+1):
+        for i in range(0, attacks.shape[0]):
             st.write("Flow Information", attacks.iloc[i,0])
             st.write("Time Stamp", attacks.iloc[i,1])
 
