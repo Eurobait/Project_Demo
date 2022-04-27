@@ -104,8 +104,8 @@ if agree:
 
     if attacks.shape[0] >0:
         for i in range(1, attacks.shape[0]+1):
-            st.write("Flow Information", attacks[i,0])
-            st.write("Time Stamp", attacks[i,1])
+            st.write("Flow Information", attacks.iloc[i,0])
+            st.write("Time Stamp", attacks.iloc[i,1])
 
 
 
