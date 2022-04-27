@@ -105,7 +105,7 @@ if agree:
     if attacks.shape[0] >0:
         for i in range(0, attacks.shape[0]):
             src_ip, des_ip, src_port, des_port, cntype = attacks.iloc[i,0].split('-')
-            st.write("Attack", i)
+            st.write("Attack", i+1)
             st.write("Source IP: ", src_ip, " Source Port: ", src_port)
             st.write("Destination IP: ", des_ip, " Destination Port: ", des_port)
             st.write("Time Stamp", attacks.iloc[i,1])
