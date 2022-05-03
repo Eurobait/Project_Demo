@@ -115,7 +115,8 @@ if agree:
 
 '''
 ## Display results with labels
-#### (Labels shouldn't really be here but it will allow us to get some idea of performance on this small demo set.)
+- Labels shouldn't really be here but it will allow us to get some idea of performance on this small demo set.
+- As you might see here, the performance doesn't look good in this randomly chosen small demo set.
 '''
 ## Display results
 hide_dataframe_row_index = """
