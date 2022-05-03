@@ -48,7 +48,7 @@ def threshold_by_precision(p):
     df = df.iloc[1000:,:]
     df["Precision"] = abs(df["Precision"] - u_precision)
     df = df.sort_values(by=['Precision'], ascending=True)
-    threshold, type, precision, recall = test_summary.iloc[df.index[0], :]
+    threshold, type, label, precision, recall = test_summary.iloc[df.index[0], :]
     return threshold, precision, recall
 
 
@@ -59,7 +59,7 @@ def threshold_by_recall(p):
     df = df.iloc[1000:,:]
     df["Recall"] = abs(df["Recall"] - u_recall)
     df = df.sort_values(by=['Recall'], ascending=True)
-    threshold, type, precision, recall = test_summary.iloc[df.index[0], :]
+    threshold, type, label, precision, recall = test_summary.iloc[df.index[0], :]
     return threshold, precision, recall
 
 
